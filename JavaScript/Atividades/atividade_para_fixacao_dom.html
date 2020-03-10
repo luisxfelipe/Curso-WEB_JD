@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <script>
+        function modificaBackground(cor) {
+            document.getElementById('texto').style.backgroundColor = cor
+        }
+
+        function perdeFoco() {
+            var valor = document.getElementById('texto').value
+            
+            if (valor.length < 3) {
+                modificaBackground('#FF0000')
+            } else {
+                modificaBackground('#00ff00')
+            }
+        }
+    </script>
+</head>
+<body>
+    <span>Modificando o background</span>
+    <hr>
+
+    <input 
+    onblur="perdeFoco()"
+    onfocus="modificaBackground('yellow')"
+    id="texto" 
+    type="text">
+</body>
+</html>
